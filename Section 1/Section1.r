@@ -22,8 +22,9 @@ betahat = solve(t(x) %*% x) %*% t(x) %*% y
 
 # Fill in the blank
 eps = y-x %*% betahat
-sigma2 = var(eps) * length(eps) / (length((eps))-1)
-betacov = sigma2[1,1] * solve(t(x) %*% x)
+epsSquared = eps * eps
+sigma2 = sum(epsSquared) / (length((eps))-1)
+betacov = sigma2 * solve(t(x) %*% x)
 sqrt(diag(betacov))
 # Now compare to lm
 # the 'minus 1' notation says not to fit an intercept (we've already hard-coded it as an extra column)
