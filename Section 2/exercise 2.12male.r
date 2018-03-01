@@ -4,11 +4,18 @@ library(MASS)
 dentalData = read.csv("dental.csv",header = TRUE)
 
 N = 1000
-X = as.matrix(dentalData$age)
-Y = as.matrix(dentalData$distance)
-intercept = rep(1,nrow(X))
-X = cbind(intercept,X)
+
+intercept = rep(1,nrow(dentalData))
+
 dentalData$intercept = intercept
+dentalData$genderFlag = rep(1,nrow(dentalData))
+dentalData$genderFlag[dentalData$Sex == 'Female'] = 0
+
+maleData = dentalData[dentalData$Sex == 'Male',]
+femaleData = dentalData[dentalData$Sex == 'Female',]
+
+X = cbind(maleData$intercept,maleData$age)
+Y = maleData$distance
 
 mu_n = solve(t(X) %*% X + diag(1,ncol(X))) %*% (t(X) %*% Y)
 Sigma_nw = solve(t(X) %*% X + diag(1,ncol(X)))
@@ -22,14 +29,16 @@ for (index in 1:N){
   beta[,index + 1] = t(rmvnorm(1, mean = mu_n, sigma = Sigma_nw / omega[index]))
 
 }
-beta = beta[,2:ncol(beta)]
+beta = beta[,500:ncol(beta)]
 betaSelect = rowMeans(beta)
 yBayes = X %*% betaSelect
 residBayes = Y - yBayes
+mean(residBayes ** 2)
 hist(residBayes)
 
-ols_mdl = lm("distance ~ age", data = dentalData)
+ols_mdl = lm("distance ~ age", data = maleData)
 residOLS = ols_mdl$residuals
+mean(residOLS ** 2)
 hist(residOLS)
 
 ridge_mdl = lm.ridge("distance ~ intercept + age + 0", lambda = 0.2, data = dentalData)
