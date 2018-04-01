@@ -257,11 +257,33 @@ $$\begin{aligned}
   \begin{exercise}
     We're going to use a Poisson model on the counts. Ignoring the fact that the data is censored, why is this not quite the right model? \textit{Hint: there are several answers to this -- the most fundamental involve considering the support of the Poisson}.
   \end{exercise}
-
+\textbf{Begin Solution:}
+1. The data is heavily skewed to the left, as can be seen from the histogram. If the censored values are available, the left-skewedness will be even more obvious.\\
+2. For a Poisson distribution, the mean, mode and variance are equal. However in this dataset, the mean is 15.92, variance is 460.91, and mode is 5.\\
+\textbf{End Solution}
   
   \begin{exercise}
     Let's assume our only covariate of interest is GRADE\footnote{I have manually replaced Kindergarten and Pre-K with Grades 0 and -1, respectively.} and put a normal prior on $\beta$. Using a Laplace approximation and an appropriately vague prior, find  95\% marginal credible intervals for the entries of $\beta$. You'll probably want to use an intercept.
   \end{exercise}
+\textbf{Begin Solution:}
+\begin{equation*}
+\begin{split}
+\lambda_i &= \exp(X\beta)\\
+p(\beta|X,Y)&\propto p(\beta) {\displaystyle \prod_{i=1}^{N} \frac{\lambda_i^{y_i}\exp(-\lambda)}{y_i!}}
+\end{split}
+\end{equation*}
+Assign a Gaussian prior to $\beta$: $\beta \sim N(0,\sigma^2I)$\\
+\begin{equation*}
+\begin{split}
+\log P(\beta|X,Y) &\propto -\frac{1}{2\sigma^2}\beta^T\beta+\sum_{i=1}^N\left[y_ix_i\beta-\exp(x_i\beta) \right]\\
+\frac{\partial^2 \log P(\beta|X,Y)}{\partial \beta_j^2} &\propto -\frac{1}{\sigma^2}-\sum_{i=1}^N \exp(x_i\beta)x_{i_j}^2\\
+\frac{\partial^2 \log P(\beta|X,Y)}{\partial \beta_j \partial \beta_k} & \propto -\sum_{i=1}^N \exp (x_i\beta) x_{i_j} x_{i_k}
+\end{split}
+\end{equation*}
+The value that maximize the posterior distribution of $\beta$ is $\hat{beta} = [0.3894, 0.0503]$. The covariance matrix is estimated by $(-H)^{-1}$.\\
+The 95\% marginal credible interval for the entries are estimated to be\\
+$$\beta_{int}:[2.3794,2.3995],\beta_{grade}:[0.0490,0.0515]$$\\
+\textbf{End Solution}
 
   \begin{exercise}[Optional]
     Repeat the analysis using a set of variables that interest you.
@@ -273,16 +295,50 @@ $$\begin{aligned}
     Download the sample STAN script \texttt{poisson.stan} and corresponding R script \texttt{run\_poisson\_stan.R}. The R script should run the  regression vs GRADE from earlier (feel free to change the prior parameters). Run it and see how the results differ from the Laplace approximation. Modify the scripy to include more variables, and present your results.
   \end{exercise}
 
+\textbf{Begin Solution:}
+With 3 chains, 3000 iterations and 1000 burn-in iterations, the trace plots are shown in Figure~\ref{Feature: Grade}.\\
+The 95\% confidence interval for the $\beta$ are
+$$\hat{\beta}_{int}=[2.375362,2.397973],\hat{\beta}_{grade}=[0.04920777,0.05165387 ]$$
+The RMSE of this model is 25.16\\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{./MATLAB/3.9/traceplot39.png}
+\end{center}
+\caption{Exercise 3.9}
+\label{Feature: Grade}
+\end{figure}
+After adding SEATTEND and SEXX as features, 
+$$\hat{\beta}_{int}=[2.350340,2.378363],\hat{\beta}_{grade}=[0.05149095,0.05434953 ]$$\\$$\hat{\beta}_{SEATTEND}=[0.1533364,0.1704776],\hat{\beta}_{gender}=[-0.5997926,-0.5742068 ]$$
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{./MATLAB/3.9/traceplot39_2.png}
+\end{center}
+\caption{Exercise 3.9 - Added variables}
+\label{Feature: Grade and some more}
+\end{figure}
+\textbf{End Solution}
   
   \begin{exercise}
     Consider ways you might improve your regression (still, using the censored data) - while staying in the GLM framework.  Ideas might include hierarchical error modeling (as we looked at in the last set of exercises), interaction terms... or something else! Looking at the data may give you inspiration. Implement this in STAN.
   \end{exercise}
-    
+\textbf{Begin Solution:}
+Consider the interaction terms between gender and grade, as well as gender and attendance. The trace plot results are as follows.\\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{./MATLAB/3.9/beta6.png}
+\end{center}
+\caption{Exercise 3.10}
+\label{Feature: Grade and some more and more}
+\end{figure}
+The RMSE is now 25.15433, which is only slightly lower than the original model.\\
+\textbf{End Solution}
   
   \begin{exercise}
     We are throwing away a lot of information by not using the censored data. Come up with a strategy, and write down how you would alter your model/sampler. Bonus points for actually implementing it in STAN (hint: look up the section on censored data in the STAN manual).
   \end{exercise}
-
+\textbf{Begin Solution:}
+I will predict the censored values using the available features. One way to perform the prediction is to calculate the l2 norms of the feature vector that does not include the censored variable. Then evenly split up the censored data into 4 portions according to the calculated l2 norms. With the portion with lowest potion corresponds to 1 student disciplined and the highest portion with 4 students disciplined.
+\textbf{End Solution}
   \bibliographystyle{apalike}
   \bibliography{course}
 
