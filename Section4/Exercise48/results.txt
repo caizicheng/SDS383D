@@ -1,0 +1,9 @@
+> quantile(params$alpha, probs = c(0.025,0.0975))
+    2.5%    9.75% 
+1.518168 1.895251 
+> quantile(params$rho, probs = c(0.025,0.0975))
+    2.5%    9.75% 
+11.86324 17.87650 
+> quantile(params$sigma, probs = c(0.025,0.0975))
+     2.5%     9.75% 
+0.3058305 0.3519437 
