@@ -21,28 +21,36 @@ K_gen = @(xaaa,xbbb) alpha^2*exp(-1/2/l^2 * norm(xaaa-xbbb,2)^2);
 
 PhiXStar = PhiX;
 
-Kstar_ = zeros(length(x1),length(x1));
+
+K = zeros(length(x1),length(x1));
 for row = 1:length(x1)
 	for col = 1:length(x1)
-		Kstar_(row,col) = K_gen(PhiXStar(row,:),PhiX(col,:));
-	end
-end
-K_star = Kstar_';
-Kstarstar = zeros(length(x1),length(x1));
-for row = 1:length(x1)
-	for col = 1:length(x1)
-		Kstarstar(row,col) = K_gen(PhiXStar(row,:),PhiXStar(col,:));
-	end
-end
-K__ = zeros(length(x1),length(x1));
-for row = 1:length(x1)
-	for col = 1:length(x1)
-		K__(row,col) = K_gen(PhiX(row,:),PhiX(col,:));
+		K(row,col) = K_gen(PhiX(row,:),PhiX(col,:));
 	end
 end
 
-fstarbar = Kstar_*inv(K__ + eye(length(K__)) * sigma^2) * y;
+K = K + sigma^2*eye(length(y));
+invK = inv(K);
+obj = @(f) objFun(y,f,K);
+options = optimoptions('fmincon','Algorithm','interior-point','UseParallel',true,'Display','iter-detailed');
+fMAP = fmincon(obj,randn(length(y),1),[],[],[],[],[],[],[],options);
 
-sigma_f = @(f) 1/(1+exp(-f));
+H = zeros(length(y));
+for index = 1:length(y)
+	p_y_f = ((1/(1+exp(-fMAP(index))))^y(index))*((1-1/(1+exp(-fMAP(index))))^(1-y(index)));
+	partialPpartialf = y(index)*exp(fMAP(index))/(1+exp(fMAP(index))) - exp(fMAP(index)*(y(index)+1))/(1+exp(fMAP(index)))^2 - fMAP(index)*sum(invK(index,:));
+	partialP2partialf2 = y(index)^2*exp(fMAP(index))/(exp(fMAP(index))+1)-exp(fMAP(index))^(y(index)+1)/(exp(fMAP(index))+1)^2+2*exp(fMAP(index))^(y(index)+2)/(exp(fMAP(index))+1)^3;
+	H(index,index) = -1/p_y_f^2*partialPpartialf^2+1/p_y_f*partialP2partialf2-sum(invK(index,:));
+end
+boundErr = sqrt(abs(diag(-inv(H))));
 
-logP = @(f) y'*log(sigma_f(f)) - (1-y)'*log(1-sigma_f(f)) - 0.5 *f'*inv(K__)*f - 0.5*log(det(K__));
+p = 1./(1+exp(-fMAP));
+pl = 1./(1+exp(-fMAP + 1.96 * boundErr));
+ph = 1./(1+exp(-fMAP - 1.96 * boundErr));
+figure(1)
+hold on
+plot(p)
+plot(y)
+plot(pl)
+plot(ph)
+legend('Probability','Truth','High Bound','Low Bound')

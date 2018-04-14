@@ -9,6 +9,7 @@
 \setlength{\parskip}{0.1 in}
 \usepackage{natbib}
 \usepackage{amsmath,amsfonts,graphicx}
+\usepackage{float}
 
 %
 % The following commands set up the lecnum (chap number)
@@ -121,6 +122,23 @@ where $\psi(\mathbf{x}) = \phi(\mathbf{x})\Sigma^{1/2}$
 
 If (as here) we only ever access $\psi$ via this inner product, we can choose to work instead with $k(\cdot,\cdot)$. This may be very convenient if the dimensionality of $\psi(x)$ is very high (or even infinite... see later). $k(\cdot,\cdot)$ is often refered to as the kernel, and this replacement is referred to as the kernel trick.
 
+\textbf{Begin Solution:}
+\begin{equation*}
+\begin{split}
+p(f^*|x_*,X,y) &= \int p(f^*|x_*,\beta) p(\beta|X,y) d\beta\\
+f^* = \phi(x)\beta &\Rightarrow f^*|X_*,\beta \sim N(0,\phi(x)^T\Sigma\phi(x))\\
+p(\beta|x,y)&\propto p(y|X,\beta)p(\beta)\\
+\Rightarrow f^*|x_*,X,y &\sim N(\frac{1}{\sigma^2}X_*^TA^{-1}Xy,X_*^TA^{-1}X_*)\\
+\text{where}\\
+A &= \sigma^{-2}XX^T+\Sigma^{-1}\\
+\text{Replace x with} \phi(x),X with \phi(X)\\
+f^*|x_*,X,y &\sim N(\frac{1}{\sigma^2}\phi^T(x_*)A^{-1}\phi(X)y,\phi^T(x_*)A^{-1}\phi(x_*))\\
+\text{where}\\
+A &= \sigma^{-2}\phi(x)\phi(x)^T+\Sigma^{-1}
+\end{split}
+\end{equation*}
+\textbf{Solution End}
+
 \begin{exercise}
 
   Let's look at a concrete example, using the old faithful dataset on $R$
@@ -132,7 +150,15 @@ If (as here) we only ever access $\psi$ via this inner product, we can choose to
   Let $\phi(x) = (1,x,x^2,x^3)$. Using appropriate priors on $\beta$ and $\sigma^2$, obtain a posterior distribution over $f:=\phi(x)^T\beta$. Plot the function (with a 95\% credible interval) by evaluating this on a grid of values.
 \end{exercise}
   
-
+\textbf{Begin Solution:}
+For details please see the code on github repository.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{./Exercise42/Exercise42.png}
+\end{center}
+\caption{Exercise 4.2}
+\end{figure} 
+\textbf{Solution End}
 
 \subsection{Function space view}
 
@@ -154,14 +180,44 @@ $$k(x,x') = \alpha^2\exp\left\{-\frac{1}{2\ell^2}|x-x'|^2\right\}$$
   Let's explore the resulting distribution over functions. Write some code to sample from a Gaussian process prior with squared exponential covariance function, evaluated on a grid of 200 inputs between 0 and 100. For $\ell=1$, sample 5 functions and plot them on the same plot. Repeat for $\ell=0.1$ and $\ell=10$. Why do we call $\ell$ the lengthscale of the kernel?
 \end{exercise}
 
+\textbf{Begin Solution:}
+For details please see the code on github repository.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{./Exercise43/Figure43.png}
+\end{center}
+\caption{Exercise 4.3}
+\end{figure} 
+\textbf{Solution End}
+
 \begin{exercise}
   Let $\mathbf{f}_*:=f(\mathbf{X}_*)$ be the function $f$ evaluated at test covariate locations $\mathbf{X}_*$. Derive the posterior distribution $p(\mathbf{f}_*|\mathbf{X}_*,\mathbf{X},\mathbf{y})$, where $\mathbf{y}$ and $\mathbf{X}$ comprise our training set. (You can start from the answer to Exercise 1 if you'd like).
 
 \end{exercise}
+
+\textbf{Begin Solution:}
+According to Equation (2.22),
+\begin{equation*}
+\begin{split}
+f^*|X,y,x_*&\sim N(\bar{f}_*,cov(f^*))\\
+cov(f^*)&=K(x_*,x_*)-K(X_*,X)\left[ K(x,x) + \sigma_n^2I\right]^{-1}K(X,X_*)
+\end{split}
+\end{equation*}
+\textbf{End Solution}
+
 \begin{exercise}
 Return to the faithful dataset. Evaluate the posterior predictive distribution 
 $p(\mathbf{f}_*|\mathbf{X}_*,\mathbf{X},\mathbf{y})$, for some reasonable choices of parameters (perhaps explore a few length scales if you're not sure what to pick), and plot the posterior mean plus a 95\% credible interval on a grid of 200 inputs between 0 and 100, overlaying the actual data.
 \end{exercise}
+
+\textbf{Begin Solution:}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{./Exercise45/exercise44.png}
+\end{center}
+\caption{Exercise 4.5}
+\end{figure} 
+\textbf{End Solution}
 
   
 \section{Parameter Estimation}
@@ -202,10 +258,28 @@ where $K$ is the covariance function evaluated at the input locations $X$. Note 
    Calculate the appropriate derivatives for the one-dimensional, squared exponential case used for the \texttt{faithful} dataset. Use these gradient to find the optimizing value of $\ell^2$, $\alpha^2$ and $\sigma^2$. Plot the resulting fit.
  \end{exercise}
 
+\textbf{Begin Solution:}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{./Exercise46/exercise46.png}
+\end{center}
+\caption{Exercise 4.6}
+\end{figure} 
+\textbf{End Solution}
 
  \begin{exercise}
    Repeat the previous exercise, but this time only use the first 10 data points from the faithful dataset. Repeat the optimization several times, using different initializations/random seeds. You will likely see widely different results -- sometimes $\ell$ is big, sometimes $\sigma^2$ is big. Why is this? Discuss why this is a problem here, but wasn't in the previous setting. You may find it helpful to look at the corresponding scatter plot, or plot the log likelihood for certain values of $\sigma^2$ and $\ell$.
  \end{exercise}
+\textbf{Begin Solution:}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{./Exercise47/exercise471.png}
+\includegraphics[width=0.75\textwidth]{./Exercise47/exercise472.png}
+\end{center}
+\caption{Exercise 4.7}
+\end{figure}
+The widely different result is due to different local minimum in the optimization.\\  
+\textbf{End Solution}
  
  \subsection{MCMC}
  Optimization is typically pretty quick, which is why it is commonly used in practice. However, we have no guarantee that our optimization surface is convex. An alternative approach is to sample from the posterior distribution over our hyperparameters.
