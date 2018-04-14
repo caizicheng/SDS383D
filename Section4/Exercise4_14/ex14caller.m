@@ -50,6 +50,12 @@ truth = zeros(size(ident));
 truth(strcmp(rawData.Species,'setosa')) = 1;
 truth(strcmp(rawData.Species,'versicolor')) = 2;
 truth(strcmp(rawData.Species,'virginica')) = 3;
-plot(ident,'LineStyle','none','Marker','x','MarkerSize',5)
+plot(ident,'LineStyle','none','Marker','x','MarkerSize',10)
 hold on
-plot(truth,'LineStyle','none','Marker','o','MarkerSize',5)
+plot(truth,'LineStyle','none','Marker','o','MarkerSize',10)
+figure()
+hold on
+plot(1./exp(-fMAP_setosa));
+plot(1./exp(-fMAP_versicolor));
+plot(1./exp(-fMAP_virginica));
+legend('setosa','versicolor','virginica')

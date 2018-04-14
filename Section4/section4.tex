@@ -290,6 +290,12 @@ The widely different result is due to different local minimum in the optimizatio
 
  \end{exercise}
 
+\textbf{Begin Solution:}
+The 95\% confidence interval for $\alpha$ is [1.518168, 1.895251].\\
+The 95\% confidence interval for $\rho$ is [11.86324,17.87650].\\
+The 95\% confidence interval for $\sigma$ is [0.3058305,0.3519437].\\
+The 95\% confidence interval for $t$ is [-2.361714,6.372179].\\
+\textbf{End Solution}
 
  \begin{exercise}
    Let's now look at a dataset with multiple predictors. Download the dataset weather.csv -- this contains latitude and longitude data for 147 weather stations, plus a response ``temperature'', which is the difference between the forecasted and actual temperature for each station.
@@ -299,12 +305,16 @@ The widely different result is due to different local minimum in the optimizatio
    Using an appropriate visualization tool, plot the mean function (try imshow or contourf in matlab or matplotlib (for python), or image or filled.contour for R).
  \end{exercise}
 
+\textbf{Begin Solution:}
+One way to extend the kernel is by making $\phi(x)$ vectors. For example $\phi(x)=[x_{lat},x_{long}]$. The length scales of latitude and longitude need to be different as the data covers different areas. Also, latitude and longitude value ranges are different.\\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{./Exercise49/Exercise49.png}
+\end{center}
+\caption{Exercise 4.9}
+\end{figure}
+\textbf{End Solution}
 
-
-   
-
-
- 
  \section{Beyond regression: non-conjugate likelihoods}
 
  So far, we've focused on Gaussian processes in a regression context. We can however use them as the basis of a non-Gaussian regression... using exactly the same techniques as we used for the regression setting! For example, in Section 3, we dealt with non-Gaussian data by transforming our regression output:
@@ -326,6 +336,9 @@ The widely different result is due to different local minimum in the optimizatio
  \begin{exercise}
    Describe (including pseudo-code) how we could implement probit Gaussian process regression, using an auxiliary variable method analogous to that used in Exercise 3.1.
  \end{exercise}
+\textbf{Begin Solution}
+First, add a latent variable that follows a Gaussian distribution. Next find the conditional distribution of this variable. Lastly convert this continuous latent variable to binary using probit function.\\
+\textbf{End Solution}
 
  For the logit case, we can again use a Laplace approximation to approximate our posterior. In the GLM setting, we used the Laplace approximation to approximate the posterior over $\beta$. Here, we will work directly with our function $f$ evaluated at our training locations, and approximate $p(f|X,y,\theta)$, where $\theta$ are the parameters of our covariance function.
 
@@ -334,15 +347,37 @@ The widely different result is due to different local minimum in the optimizatio
  \begin{exercise}
    Derive the Hessian of $\log P^*(f)$, when $y_i \sim \mbox{Bernoulli}\left(\frac{1}{1+e^{-f_i}}\right)$
  \end{exercise}
+\textbf{Begin Solution}
+\begin{equation*}
+\begin{split}
+\frac{\partial P^*(f)}{\partial f} &= \sum_i\left\{{y_i}\frac{1}{\sigma(f_i)}\cdot \sigma^{'}(f_i)+(1-y_i)\frac{-\sigma(-f_i)}{1-\sigma(-f_i)}-\frac{1}{2}f_i^TK^{-1}\right\}\\
+\frac{\partial^2 P^*(f)}{\partial f^2} &=\sum_i\left\{y_i\frac{\sigma(f)\sigma^{''}(f)-\sigma^{'}(f)^2}{\sigma(f_i)^2}+(1-y_i)\frac{(\sigma(f)-1)(\sigma^{''}(f)-\sigma^{'}(f))}{(1-\sigma(f))^2}-\frac{1}{2}K^{-1} \right\}
+\end{split}
+\end{equation*}
+where
+\begin{equation*}
+\sigma(f_i) = \frac{1}{1+\exp(-f_i)} \hspace{1cm} \sigma^{'}(f_i) = \frac{\exp(-f_i)}{(1+\exp(-f_i))^2} \hspace{1cm} \sigma^{''}(f_i) = \frac{2\exp(-2f_i)}{(1+\exp(-f_i))^3}-\frac{\exp(-f_i)}{(\exp(-f_i)+1)^2}
+\end{equation*}
+\textbf{End Solution}
 
  \begin{exercise}
    The dataset iris.csv contains details of 150 flowers from three species. Pick two of them (your choice) as your regression dataset. Find the MAP of $f$, for some reasonable choice of hyperparameters and squared exponential kernel. Visualize the corresponding class probabilities on a series of 2d plots.
  \end{exercise}
-
+\textbf{Begin Solution:}
+For details please see the code on github repository.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{./Exercise4_12/Probplot.png}
+\end{center}
+\caption{Exercise 4.12}
+\end{figure}
+\textbf{End Solution}
  \begin{exercise}
    Evaluate the Hessian using the same dataset, and visualize uncertainty in your plots from the previous exercise (e.g.\ by creating a contour plot of the marginal standard deviations).
    \end{exercise}
-
+\textbf{Begin Solution:}
+\\See solution for 4.12\\
+\textbf{End Solution}
 
  \begin{exercise}
    In a multi-class setting, an appropriate likelihood is the multinomial, which is parametrized by a simplex-valued vector $\pi = (\pi_1,\dots, \pi_K)$. We can map a real-valued vector $y$ to the simplex using the softmax transformation:
@@ -352,10 +387,17 @@ The widely different result is due to different local minimum in the optimizatio
    To use this transformation, we will have to have one Gaussian process for each class.\footnote{Technically, we could use $K-1$ GPs plus a constant reference value for the third class, but let's use $K$ for now.} Practically, we can think of this as using a single Gaussian process, but with a block-diagonal covariance matrix with K $N\times N$ blocks. Using a Laplace approximation to the posterior distribution, repeat the previous three exercises using all three types of iris.
    \end{exercise}
    
- 
+\textbf{Begin Solution:} 
+For details please see code on github repository.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=\textwidth]{./Exercise4_14/class.png}
+\includegraphics[width=\textwidth]{./Exercise4_14/prob.png}
+\end{center}
+\caption{Exercise 4.14}
+\end{figure}
 
-
-
+\textbf{End Solution} 
 
   \bibliographystyle{apalike}
   \bibliography{course}
