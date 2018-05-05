@@ -55,7 +55,7 @@ hold on
 plot(truth,'LineStyle','none','Marker','o','MarkerSize',10)
 figure()
 hold on
-plot(1./exp(-fMAP_setosa));
-plot(1./exp(-fMAP_versicolor));
-plot(1./exp(-fMAP_virginica));
+plot(1./(1+exp(-fMAP_setosa)));
+plot(1./(1+exp(-fMAP_versicolor)));
+plot(1./(1+exp(-fMAP_virginica)));
 legend('setosa','versicolor','virginica')

@@ -1,0 +1,428 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2018.2.6)  27 APR 2018 09:45
+entering extended mode
+**./section5.tex
+(section5.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(C:\Users\zc3763\AppData\Roaming\MiKTeX\2.9\tex\latex\natbib\natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip43
+\bibsep=\skip44
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count87
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks15
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count101
+\float@exts=\toks20
+\float@box=\box28
+\@float@everytoks=\toks21
+\@floatcapt=\box29
+)
+\c@lecnum=\count102
+\c@theorem=\count103
+\c@exercise=\count104
+\c@example=\count105
+ (section5.aux)
+\openout1 = `section5.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+
+(C:\Users\zc3763\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count106
+\scratchdimen=\dimen114
+\scratchbox=\box30
+\nofMPsegments=\count107
+\nofMParguments=\count108
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count109
+\MPscratchDim=\dimen115
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
+\everyMPtoPDFconversion=\toks23
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 97.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 97.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<./exercise_5_1/resid.png, id=1, 540.51938pt x 340.27126pt>
+File: ./exercise_5_1/resid.png Graphic file (type png)
+
+<use ./exercise_5_1/resid.png>
+Package pdftex.def Info: ./exercise_5_1/resid.png used on input line 108.
+(pdftex.def)             Requested size: 469.75499pt x 295.73245pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2 <./exercise_5_1/resid.
+png>]
+<./exercise_5_2/class.png, id=20, 421.575pt x 316.18124pt>
+File: ./exercise_5_2/class.png Graphic file (type png)
+
+<use ./exercise_5_2/class.png>
+Package pdftex.def Info: ./exercise_5_2/class.png used on input line 151.
+(pdftex.def)             Requested size: 469.75499pt x 352.32101pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+Overfull \hbox (68.82576pt too wide) in paragraph at lines 159--160
+[]\OT1/cmr/m/it/10 Let's as-sume we want to in-te-grate out $\OML/cmm/m/it/10 
+$\OT1/cmr/m/it/10 . What is the con-di-tional dis-tri-bu-tion $\OML/cmm/m/it/10
+ P\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Z[]\OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 Z[]; 
+X[]; []; []; []; []; ; \OT1/cmr/m/n/10 )$\OT1/cmr/m/it/10 ,
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <./exercise_5_2/class.png (PNG copy)>]
+<./exercise_5_5/class.png, id=28, 421.575pt x 316.18124pt>
+File: ./exercise_5_5/class.png Graphic file (type png)
+
+<use ./exercise_5_5/class.png>
+Package pdftex.def Info: ./exercise_5_5/class.png used on input line 207.
+(pdftex.def)             Requested size: 469.75499pt x 352.32101pt.
+ [5]
+Overfull \hbox (13.65231pt too wide) in paragraph at lines 219--220
+[]\OT1/cmr/m/n/10 Much as the multi-no-mial is the mul-ti-vari-ate gen-er-al-iz
+a-tion of the bi-no-mial dis-tri-bu-tion, the Dirichlet($\OML/cmm/m/it/10 []; 
+[] ; []$\OT1/cmr/m/n/10 )
+ []
+
+
+LaTeX Warning: Reference `fig:DirSimp' on page 5-6 undefined on input line 221.
+
+
+[6 <./exercise_5_5/class.png (PNG copy)>]
+<./exercise_5_7/50.png, id=39, 421.575pt x 316.18124pt>
+File: ./exercise_5_7/50.png Graphic file (type png)
+
+<use ./exercise_5_7/50.png>
+Package pdftex.def Info: ./exercise_5_7/50.png used on input line 260.
+(pdftex.def)             Requested size: 469.75499pt x 352.32101pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7]
+<./exercise_5_7/10.png, id=45, 421.575pt x 316.18124pt>
+File: ./exercise_5_7/10.png Graphic file (type png)
+
+<use ./exercise_5_7/10.png>
+Package pdftex.def Info: ./exercise_5_7/10.png used on input line 267.
+(pdftex.def)             Requested size: 469.75499pt x 352.32101pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./exercise_5_7/50.png (PNG copy)>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 277.
+
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 277.
+ [9 <./exercise_5_7/10.png (PNG copy)>] <./exercise_5_8/Cluster1.png, id=53, 42
+1.575pt x 316.18124pt>
+File: ./exercise_5_8/Cluster1.png Graphic file (type png)
+
+<use ./exercise_5_8/Cluster1.png>
+Package pdftex.def Info: ./exercise_5_8/Cluster1.png used on input line 301.
+(pdftex.def)             Requested size: 469.75499pt x 352.32101pt.
+
+<./exercise_5_8/Cluster2.png, id=54, 421.575pt x 316.18124pt>
+File: ./exercise_5_8/Cluster2.png Graphic file (type png)
+
+<use ./exercise_5_8/Cluster2.png>
+Package pdftex.def Info: ./exercise_5_8/Cluster2.png used on input line 307.
+(pdftex.def)             Requested size: 469.75499pt x 352.32101pt.
+
+Underfull \vbox (badness 1810) has occurred while \output is active []
+
+ [10 <./exercise_5_8/Cluster1.png (PNG copy)>] [11 <./exercise_5_8/Cluster2.png
+ (PNG copy)>]
+
+Package natbib Warning: Citation `BleNgJor2003' on page 5-12 undefined on input
+ line 346.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+<./exercise_5_13/alpha.png, id=64, 421.575pt x 316.18124pt>
+File: ./exercise_5_13/alpha.png Graphic file (type png)
+
+<use ./exercise_5_13/alpha.png>
+Package pdftex.def Info: ./exercise_5_13/alpha.png used on input line 394.
+(pdftex.def)             Requested size: 469.75499pt x 352.32101pt.
+ [13] [14 <./exercise_5_13/alpha.png (PNG copy)>]
+Overfull \hbox (1.1398pt too wide) in paragraph at lines 430--431
+[]\OT1/cmr/m/it/10 Show that, if $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 []; [] ; 
+[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10  []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 [];
+ [] ; []\OT1/cmr/m/n/10 )$\OT1/cmr/m/it/10 , then $\OT1/cmr/m/n/10 (\OML/cmm/m
+/it/10 [] \OT1/cmr/m/n/10 +
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--443
+
+ []
+
+[15]
+Overfull \hbox (30.03937pt too wide) in paragraph at lines 455--456
+[]\OT1/cmr/m/n/10 We can con-struct a fi-nite di-men-sional ap-prox-i-ma-tion t
+o the Dirich-let pro-cess by sam-pling $\OML/cmm/m/it/10  \OMS/cmsy/m/n/10  [
+][] []$
+ []
+
+<./exercise_5_17/Cluster1.png, id=76, 421.575pt x 316.18124pt>
+File: ./exercise_5_17/Cluster1.png Graphic file (type png)
+
+<use ./exercise_5_17/Cluster1.png>
+Package pdftex.def Info: ./exercise_5_17/Cluster1.png used on input line 464.
+(pdftex.def)             Requested size: 469.75499pt x 352.32101pt.
+
+<./exercise_5_17/Cluster2.png, id=77, 421.575pt x 316.18124pt>
+File: ./exercise_5_17/Cluster2.png Graphic file (type png)
+
+<use ./exercise_5_17/Cluster2.png>
+Package pdftex.def Info: ./exercise_5_17/Cluster2.png used on input line 470.
+(pdftex.def)             Requested size: 469.75499pt x 352.32101pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+<./exercise_5_17/ClusterSize.png, id=83, 421.575pt x 316.18124pt>
+File: ./exercise_5_17/ClusterSize.png Graphic file (type png)
+
+<use ./exercise_5_17/ClusterSize.png>
+Package pdftex.def Info: ./exercise_5_17/ClusterSize.png used on input line 476
+.
+(pdftex.def)             Requested size: 469.75499pt x 352.32101pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17 <./exercise_5_17/Cluster1.png (PNG copy)>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18 <./exercise_5_17/Cluster2.png (PNG copy)>]
+No file section5.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[19 <./exercise_5_17/ClusterSize.png (PNG copy)>] (section5.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2704 strings out of 493323
+ 36176 string characters out of 3139064
+ 106502 words of memory out of 3000000
+ 6188 multiletter control sequences out of 15000+200000
+ 12363 words of font info for 47 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 39i,17n,25p,910b,258s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
+7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on section5.pdf (19 pages, 374835 bytes).
+PDF statistics:
+ 156 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+
